@@ -1,10 +1,8 @@
 <script setup lang="ts">
 
-defineProps<{ title?: string }>()
 </script>
-
 <template>
-    <img class="img_landing" src="/home-baner.png" alt="home-landing">
+<img class="img_landing" src="/home-baner.png" alt="home-landing">
 </template>
 
 <style scoped>
