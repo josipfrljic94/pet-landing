@@ -1,5 +1,5 @@
 <template>
-    <div :class="['block-container', imgLeft ? '' : 'row-reverse',hasGutter ? 'hasGutter' : '']">
+    <div :class="['block-container', imgLeft ? '' : 'row-reverse', hasGutter ? 'hasGutter' : '']">
         <div class="text-block">
             <h3 class="block_title">{{ title }}</h3>
             <slot></slot>
@@ -8,16 +8,30 @@
     </div>
 </template>
   
-<script setup lang="ts">
+<script  lang="ts">
+import { defineComponent } from 'vue';
 
+export default defineComponent({
+    props: {
+        title: {
+            type: String,
+            required: true
+        },
+        imgUrl: {
+            type: String,
+            required: true
+        },
+        imgLeft: {
+            type: Boolean,
+            required: false
+        },
+        hasGutter: {
+            type: Boolean,
+            required: false
+        }
+    },
 
-interface BlockProps {
-    title: string;
-    imgUrl: string;
-    imgLeft?: boolean;
-    hasGutter?: boolean;
-}
-const props = defineProps<BlockProps>();
+});
 </script>
   
 <style scoped>
@@ -29,8 +43,8 @@ const props = defineProps<BlockProps>();
     gap: 30px;
     padding: 0 165px;
 
-    &.hasGutter{
-        margin-bottom:78px;
+    &.hasGutter {
+        margin-bottom: 78px;
     }
 
     &.row-reverse {
@@ -71,7 +85,7 @@ const props = defineProps<BlockProps>();
 
 }
 
-:deep >span {
+:deep>span {
     color: #2B2B2B;
     font-size: 20px;
     font-style: normal;

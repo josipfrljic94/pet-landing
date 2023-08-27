@@ -2,27 +2,39 @@
     <h1 :class="titleClasses">{{ title, isMain }}</h1>
 </template>
   
-<script setup lang="ts">
-import { computed } from 'vue';
+<script  lang="ts">
+import { computed, defineComponent } from 'vue';
 
-interface TitleProps {
-    isMain?: boolean;
-    title: string;
-}
 
-const props = defineProps<TitleProps>();
 
-const titleClasses = computed(() => {
-    return {
-        'section-title':true,
-        'main-title': props.isMain,
-    };
+export default defineComponent({
+    props: {
+        title: {
+            type: String,
+            required: true
+        },
+        isMain: {
+            type: Boolean,
+            required: false
+        }
+    },
+    setup(props) {
+        const titleClasses = computed(() => ({
+            'section-title': true,
+            'main-title': props.isMain
+        }));
+
+        return {
+            titleClasses
+        };
+    }
+
 });
 </script>
   
 <style scoped>
 .section-title {
-    margin-top:74px;
+    margin-top: 74px;
     margin-bottom: 74px;
     color: #2B2B2B;
     font-size: 58px;
@@ -31,6 +43,7 @@ const titleClasses = computed(() => {
     line-height: normal;
     letter-spacing: 0.258px;
     text-align: center;
+
     &.main-title {
         margin-top: 112px;
         margin-bottom: 103px;
