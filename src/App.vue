@@ -36,8 +36,12 @@
       have good food, regular veterinary care, shelter and a loving family, they will live longer, healthier lives.
     </span>
   </InfoBlock>
-  <Title :isMain="false" title="Gallery" />
-  <CarouselWrapper :items="carouselItems" />
+  <div class="light-wrapper">
+    <Title :isMain="false" title="Gallery" />
+    <CarouselWrapper :items="carouselItems" />
+    <Grid :images="gridItems" />
+  </div>
+  <Footer :footerCategories="footerData" />
 </template>
 
 <script setup lang="ts">
@@ -45,12 +49,68 @@ import HomeBanner from './components/home_banner/HomeBanner.vue';
 import Title from "./components/title/Title.vue";
 import InfoBlock from "./components/info_block/InfoBlock.vue";
 import CarouselWrapper from "./components/carousel/CarouselWrapper.vue";
+import Grid from "./components/grid/Grid.vue";
+import Footer from "./components/footer/Footer.vue";
 import { defineComponent } from 'vue';
 
 const carouselItems = [
-{ imgUrl: '/slider.png' },
+  { imgUrl: '/slider.png' },
   { imgUrl: '/meow.png' },
   { imgUrl: '/meow.png' },
+]
+
+const gridItems = [
+  {
+    imgUrl: "/img_1.png",
+  },
+  {
+    imgUrl: "/img_2.png",
+  },
+  {
+    imgUrl: "/img_3.png",
+  },
+  {
+    imgUrl: "/img_4.png",
+  },
+  {
+    imgUrl: "/img_5.png",
+  },
+  {
+    imgUrl: "/img_6.png",
+  },
+  {
+    imgUrl: "/img_7.png",
+  },
+  {
+    imgUrl: "/img_8.png",
+  },
+];
+
+const footerData = [
+  {
+    title: "pet-facts.com",
+    footerItems: [
+      "About us",
+      "Careers",
+      "FAQ"
+    ]
+  },
+  {
+    title: "pet-facts.com",
+    footerItems: [
+      "About us",
+      "Careers",
+      "FAQ"
+    ]
+  },
+  {
+    title: "pet-facts.com",
+    footerItems: [
+      "About us",
+      "Careers",
+      "FAQ"
+    ]
+  }
 ]
 
 
@@ -61,4 +121,10 @@ defineComponent({
 </script>
 
 
-<style scoped></style>
+<style scoped>
+.light-wrapper {
+  background-color: #fff;
+  box-shadow: 0 0 0 100vmax #fff;
+  clip-path: inset(0 -100vmax);
+}
+</style>

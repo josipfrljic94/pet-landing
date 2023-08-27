@@ -9,6 +9,10 @@
   -webkit-text-size-adjust: 100%;
   font-family: 'Open Sans', sans-serif;
 }
+*{
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
 :root>*{
     max-width: 1440px;
     margin: 0 auto;
