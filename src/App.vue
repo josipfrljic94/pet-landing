@@ -1,10 +1,3 @@
-<script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue';
-import HomeBanner from './components/home_banner/HomeBanner.vue';
-import Title from "./components/title/Title.vue";
-import InfoBlock from "./components/info_block/InfoBlock.vue";
-</script>
-
 <template>
   <HomeBanner />
   <Title title="Daily pet facts - Love!" :isMain="true" />
@@ -43,7 +36,29 @@ import InfoBlock from "./components/info_block/InfoBlock.vue";
       have good food, regular veterinary care, shelter and a loving family, they will live longer, healthier lives.
     </span>
   </InfoBlock>
-  <Title title="Gallery"/>
+  <Title :isMain="false" title="Gallery" />
+  <CarouselWrapper :items="carouselItems" />
 </template>
+
+<script setup lang="ts">
+import HomeBanner from './components/home_banner/HomeBanner.vue';
+import Title from "./components/title/Title.vue";
+import InfoBlock from "./components/info_block/InfoBlock.vue";
+import CarouselWrapper from "./components/carousel/CarouselWrapper.vue";
+import { defineComponent } from 'vue';
+
+const carouselItems = [
+{ imgUrl: '/slider.png' },
+  { imgUrl: '/meow.png' },
+  { imgUrl: '/meow.png' },
+]
+
+
+defineComponent({
+  components: { CarouselWrapper },
+})
+// console.log(this)
+</script>
+
 
 <style scoped></style>

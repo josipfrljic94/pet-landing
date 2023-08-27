@@ -6,7 +6,7 @@
 import { computed } from 'vue';
 
 interface TitleProps {
-    isMain: boolean;
+    isMain?: boolean;
     title: string;
 }
 
