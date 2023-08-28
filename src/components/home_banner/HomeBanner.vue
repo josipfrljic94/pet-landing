@@ -10,16 +10,5 @@
     width: 100%;
     min-height: 200px;
     object-fit: cover;
-    animation: fadeIn 0.7s ease-out;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 </style>

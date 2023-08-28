@@ -1,38 +1,33 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useIntersectionObserver } from '@vueuse/core';
+
+const imgIsVisible = ref(false);
+
+const image = ref(null);
+useIntersectionObserver(image, ([{ isIntersecting }]) => {
+    imgIsVisible.value = isIntersecting;
+});
+
+defineProps({
+    title: String,
+    imgUrl: String,
+    imgLeft: Boolean,
+    hasGutter: Boolean
+});
+</script>
+
 <template>
     <div :class="['block-container', imgLeft ? '' : 'row-reverse', hasGutter ? 'hasGutter' : '']">
         <div class="text-block">
             <h3 class="block_title">{{ title }}</h3>
             <slot></slot>
         </div>
-        <img class="block_img" :src="imgUrl" alt="img">
+        <img ref="image" :class="{ 'img-animate': imgIsVisible, 'block_img': true }" :src="imgUrl" alt="img">
     </div>
 </template>
   
-<script  lang="ts">
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-    props: {
-        title: {
-            type: String,
-            required: true
-        },
-        imgUrl: {
-            type: String,
-            required: true
-        },
-        imgLeft: {
-            type: Boolean,
-            required: false
-        },
-        hasGutter: {
-            type: Boolean,
-            required: false
-        }
-    },
-
-});
-</script>
   
 <style scoped>
 .block-container {
@@ -115,4 +110,10 @@ export default defineComponent({
     line-height: 30px;
     letter-spacing: 0.089px;
 }
+
+.img-animate {
+    animation: bubble 0.7s ease;
+}
+
+
 </style>
