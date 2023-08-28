@@ -73,7 +73,7 @@ export default defineComponent({
 
         }
 
-        @media only screen and (max-width: 1284px) and (min-width: 785px){
+        @media only screen and (max-width: 1284px) and (min-width: 785px) {
 
             flex: 0 0 345px;
             height: 345px;
@@ -96,6 +96,10 @@ export default defineComponent({
             letter-spacing: 0.16px;
             margin-top: 0;
             margin-bottom: 30px;
+
+            @media only screen and (max-width: 1024px) {
+                text-align: center;
+            }
         }
 
 

@@ -93,19 +93,29 @@ export default defineComponent({
     transform: translateY(74px);
     width: 40px;
     height: 43px;
+    &>img{
+        width: 100%;
+    }
 
     @media only screen and (max-width: 1024px) {
-        width: 20px;
-        height: 22px;
+        width: 36px;
+        height: 26px;
     }
 }
 
 .carousel__prev {
-    left: 40%;
+    left: calc(50% - 60px);
+    @media only screen and (max-width: 1024px) {
+      left: calc(50% - 56px);
+    }
 }
 
 .carousel__next {
-    right: calc(40% - 60px);
+    left: calc(50% + 20px);
+    @media only screen and (max-width: 1024px) {
+        left: calc(50% + 16px);
+    }
+  
 }
 </style>
 

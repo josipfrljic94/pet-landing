@@ -45,6 +45,11 @@ export default defineComponent({
     letter-spacing: 0.258px;
     text-align: center;
 
+    &.main-title {
+        padding-top: 112px;
+        padding-bottom: 103px;
+    }
+
     @media screen and (max-width:1024px) {
         font-size: 46px;
         font-style: normal;
@@ -52,12 +57,16 @@ export default defineComponent({
         line-height: 53px;
         /* 115.217% */
         letter-spacing: 0.204px;
+        padding-top: 48px;
+        padding-bottom: 32px;
+
+        &.main-title {
+            padding-top: 30px;
+            padding-bottom: 29px;
+        }
     }
 
-    &.main-title {
-        padding-top: 112px;
-        padding-bottom: 103px;
-    }
+
 
 }
 </style>
