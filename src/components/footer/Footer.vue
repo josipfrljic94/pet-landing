@@ -69,6 +69,7 @@ export default defineComponent({
         line-height: 23px;
         /* 143.75% */
         letter-spacing: 0.071px;
+        padding: 0 10px;
     }
 }
 </style>
