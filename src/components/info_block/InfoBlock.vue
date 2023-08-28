@@ -43,6 +43,16 @@ export default defineComponent({
     gap: 30px;
     padding: 0 165px;
 
+    @media only screen and (max-width: 1028px) and (min-width:1025px) {
+        flex-direction: column-reverse;
+        padding: 0 30px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        flex-direction: column-reverse !important;
+        padding: 0 15px;
+    }
+
     &.hasGutter {
         margin-bottom: 78px;
     }
@@ -55,13 +65,21 @@ export default defineComponent({
         flex: 0 0 455px;
         height: 455px;
         border-radius: 10px;
+        width: 100%;
 
-        @media only screen and (max-width: 1284px) {
-            & {
-                flex: 0 0 345px;
-                height: 345px;
-            }
+        @media only screen and (max-width: 784px) {
+
+            flex: 1;
+
         }
+
+        @media only screen and (max-width: 1284px) and (min-width: 785px){
+
+            flex: 0 0 345px;
+            height: 345px;
+
+        }
+
     }
 
     &>.text-block {

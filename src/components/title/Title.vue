@@ -34,8 +34,9 @@ export default defineComponent({
   
 <style scoped>
 .section-title {
-    margin-top: 74px;
-    margin-bottom: 74px;
+    padding-top: 74px;
+    padding-bottom: 74px;
+    margin: 0;
     color: #2B2B2B;
     font-size: 58px;
     font-style: normal;
@@ -44,10 +45,20 @@ export default defineComponent({
     letter-spacing: 0.258px;
     text-align: center;
 
-    &.main-title {
-        margin-top: 112px;
-        margin-bottom: 103px;
+    @media screen and (max-width:1024px) {
+        font-size: 46px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 53px;
+        /* 115.217% */
+        letter-spacing: 0.204px;
     }
+
+    &.main-title {
+        padding-top: 112px;
+        padding-bottom: 103px;
+    }
+
 }
 </style>
   

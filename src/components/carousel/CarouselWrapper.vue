@@ -1,7 +1,7 @@
 <template>
     <Carousel :wrap-around="true" :breakpoints="breakpoints">
         <Slide v-for="(slide, index) in items" :key="index">
-            <img :src="slide.imgUrl" />
+            <img :src="slide.imgUrl" loading="lazy" />
         </Slide>
 
         <template #addons>
@@ -62,8 +62,6 @@ export default defineComponent({
 </script>
   
 <style>
-:root {}
-
 .carousel__item {
     min-height: 200px;
     width: 100%;
@@ -95,6 +93,11 @@ export default defineComponent({
     transform: translateY(74px);
     width: 40px;
     height: 43px;
+
+    @media only screen and (max-width: 1024px) {
+        width: 20px;
+        height: 22px;
+    }
 }
 
 .carousel__prev {

@@ -54,7 +54,8 @@ export default defineComponent({
         justify-content: center;
         align-items: flex-start;
         gap: 30px;
-        padding-bottom:50px;
+        padding-bottom: 50px;
+        flex-wrap: wrap;
     }
 
     &>.footer-policy {
@@ -65,7 +66,8 @@ export default defineComponent({
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
-        line-height: 28px;
+        line-height: 23px;
+        /* 143.75% */
         letter-spacing: 0.071px;
     }
 }

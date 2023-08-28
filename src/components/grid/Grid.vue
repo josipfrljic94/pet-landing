@@ -2,7 +2,7 @@
     <div class="grid-container">
         <div class="card" v-for="(item, index) in images" :key="index">
 
-            <img class="item" :src="item.imgUrl" />
+            <img loading="lazy" class="item" :src="item.imgUrl" />
         </div>
     </div>
 </template>
