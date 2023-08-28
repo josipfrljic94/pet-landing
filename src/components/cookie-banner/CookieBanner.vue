@@ -48,15 +48,17 @@ export default defineComponent({
   right: 0;
   background-color: #666666;
   color: white;
-  padding: 10px;
+  padding: 40px 10px;
   text-align: center;
-
+  z-index: 9;
   &>button {
     appearance: none;
+    color: #0a0a0a;
     border: none;
     height: 30px;
     width: 120px;
     padding: 0 10px;
+    border-radius: 4px;
     cursor: pointer;
     background-color: #e8e7e7;
     &:hover{
