@@ -41,6 +41,7 @@
     <CarouselWrapper :items="carouselItems" />
     <Grid :images="gridItems" />
   </div>
+  <CookieBanner />
   <Footer :footerCategories="footerData" />
 </template>
 
@@ -51,6 +52,7 @@ import InfoBlock from "./components/info_block/InfoBlock.vue";
 import CarouselWrapper from "./components/carousel/CarouselWrapper.vue";
 import Grid from "./components/grid/Grid.vue";
 import Footer from "./components/footer/Footer.vue";
+import CookieBanner from "./components/cookie-banner/CookieBanner.vue";
 import { defineComponent } from 'vue';
 
 const carouselItems = [
